@@ -86,7 +86,7 @@
 
     <!-- banner section -->
 
-    <section class="bg-[#CFF0DC] grid grid-cols-[30%_40%_30%] gap py-8">
+    <section class="bg-[#CFF0DC] grid grid-cols-[30%_40%_30%] gap">
       <div><img src="./assets/hero-leaf1.png" alt="" /></div>
       <div
         class="flex flex-col items-center justify-center text-center space-y-4"
@@ -107,189 +107,60 @@
 
     <main>
       <!-- main section -->
-      <section class="bg-[#F0FDF4]">
-        <h1 class="font-bold text-2xl text-center py-20">Chose Your Trees</h1>
-        <!-- main div -->
-        <div class="main-div grid grid-cols-5 w-11/12 mx-auto gap-4">
-          <div class="row-span-2 border-2 border-red-500 p-6">
-            <div>
-              <h1 class="font-bold">Catagories</h1>
-              <ul class="space-y-2 text-sm">
-                <li>
-                  <button class="hover:bg-gray-200 p-1 rounded">
-                    All Trees
-                  </button>
-                </li>
-                <li>
-                  <button class="hover:bg-gray-200 p-1 rounded">
-                    Fruit Trees
-                  </button>
-                </li>
-                <li>
-                  <button class="hover:bg-gray-200 p-1 rounded">
-                    Shade Trees
-                  </button>
-                </li>
-                <li>
-                  <button class="hover:bg-gray-200 p-1 rounded">
-                    Medical Trees
-                  </button>
-                </li>
-                <li>
-                  <button class="hover:bg-gray-200 p-1 rounded">
-                    All Trees
-                  </button>
-                </li>
-                <li>
-                  <button class="hover:bg-gray-200 p-1 rounded">
-                    Amber Trees
-                  </button>
-                </li>
-                <li>
-                  <button class="hover:bg-gray-200 p-1 rounded">Bamboo</button>
-                </li>
-                <li>
-                  <button class="hover:bg-gray-200 p-1 rounded">Timber</button>
-                </li>
-                <li>
-                  <button class="hover:bg-gray-200 p-1 rounded">
-                    Evergreen
-                  </button>
-                </li>
-                <li>
-                  <button class="hover:bg-gray-200 p-1 rounded">
-                    Ornamental Plant
-                  </button>
-                </li>
-                <li>
-                  <button class="hover:bg-gray-200 p-1 rounded">
-                    Climbers
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
+       <section class="bg-[#F0FDF4]">
+        <h1 class="font-bold text-2xl text-center py-10">Chose Your Trees</h1>
+      <div class="md:flex w-11/12 mx-auto gap-4"> 
+        <!-- category left div -->
+        <div class="md:w-1/5 border-4 border-red-600 p-6 rounded-lg">
+            <h2 class="font-bold text-center mb-4">Categories</h2>
 
-          <div class="space-y-2">
-            <div class="space-y-3">
-              <img src="./assets/about.png" alt="" />
-              <h1 class="font-bold">Mango Tree</h1>
-              <p class="text-sm">
-                A fast-growing tropical tree that produces delicious, juicy
-                mangoes during summer. Its dense green
-              </p>
-            </div>
-            <div class="flex justify-between items-center">
-              <h3 class="font-semibold bg-sky-200 text-white rounded-3xl p-2">
-                Fruit tree
-              </h3>
-              <p>$<span class="font-bold">500</span></p>
-            </div>
-            <button class="btn w-full bg-green-600 text-white rounded-3xl">
-              Add to Cart
-            </button>
-          </div>
+            <div id="all-plants" class="active p-2 category-btn">All Plants</div>
 
-          <!-- end -->
-
-          <div>
-            <div>
-              <img src="./assets/about.png" alt="" />
-              <h1 class="font-bold">Mango Tree</h1>
-              <p>
-                A fast-growing tropical tree that produces delicious, juicy
-                mangoes during summer. Its dense green
-              </p>
-            </div>
-            <div class="flex justify-between">
-              <h3 class="font-semibold">Fruit tree</h3>
-              <p>$<span class="font-bold">500</span></p>
-            </div>
-          </div>
-
-          <div>
-            <div>
-              <img src="./assets/about.png" alt="" />
-              <h1 class="font-bold">Mango Tree</h1>
-              <p>
-                A fast-growing tropical tree that produces delicious, juicy
-                mangoes during summer. Its dense green
-              </p>
-            </div>
-            <div class="flex justify-between">
-              <h3 class="font-semibold">Fruit tree</h3>
-              <p>$<span class="font-bold">500</span></p>
-            </div>
-          </div>
-
-          <!-- your cart div -->
-          <div class="row-span-2 p-4 border-2 border-orange-600">
-            <div>
-              <img src="./assets/about.png" alt="" />
-              <h1 class="font-bold">Mango Tree</h1>
-              <p>
-                A fast-growing tropical tree that produces delicious, juicy
-                mangoes during summer. Its dense green
-              </p>
-            </div>
-            <div class="flex justify-between">
-              <h3 class="font-semibold">Fruit tree</h3>
-              <p>$<span class="font-bold">500</span></p>
-            </div>
-          </div>
-
-          <!-- <div>
-            <div>
-              <img src="./assets/about.png" alt="" />
-              <h1 class="font-bold">Mango Tree</h1>
-              <p>
-                A fast-growing tropical tree that produces delicious, juicy
-                mangoes during summer. Its dense green
-              </p>
-            </div>
-            <div class="flex justify-between">
-              <h3 class="font-semibold">Fruit tree</h3>
-              <p>$<span class="font-bold">500</span></p>
-            </div>
-          </div>
-
-          <div>
-            <div>
-              <img src="./assets/about.png" alt="" />
-              <h1 class="font-bold">Mango Tree</h1>
-              <p>
-                A fast-growing tropical tree that produces delicious, juicy
-                mangoes during summer. Its dense green
-              </p>
-            </div>
-            <div class="flex justify-between">
-              <h3 class="font-semibold">Fruit tree</h3>
-              <p>$<span class="font-bold">500</span></p>
-            </div>
-          </div>
-
-          <div class=" border-3 border-green-800">
-            <div>
-              <img src="./assets/about.png" alt="" />
-              <h1 class="font-bold">Mango Tree</h1>
-              <p>
-                A fast-growing tropical tree that produces delicious, juicy
-                mangoes during summer. Its dense green
-              </p>
-            </div>
-            <div class="flex justify-between">
-              <h3 class="font-semibold">Fruit tree</h3>
-              <p>$<span class="font-bold">500</span></p>
-            </div> -->
-          </div>
+            <ul id="categories-container"  class="text-sm">
+              
+            </ul>
         </div>
-      </section>
+
+        <!-- trees card div -->
+          <div id="cart-container" class="md:w-3/5 grid grid-cols-1 sm:grid-cols-3 gap-4 rounded-lg sm:py-4">
+
+          </div>
+
+            <!-- right cart div -->
+             <div id="cart-container" class="md:w-1/5 col-span-3 border-2 border-orange-600 p-4 rounded-lg space-y-2 ">
+      <div class="flex justify-between p-4">
+        <h1 class="font-bold mb-4 text-center">My Cart</h1>
+        <button class=" bg-green-600 text-white text-sm font-bold px-2 py-0">Remove</button>
+      </div>
+      <div class="p-2 bg-gray-300 rounded-md">
+        <div>
+        <h1 class="font-bold text-sm">Mango Tree</h1>
+        <p>$ <span>price</span> * 1</p>
+      </div>
+      <div id="cart-total" class="font-bold text-right text-sm">Total: $ <span>0</span></div>
+      </div>
+
+      <div class="p-2 bg-gray-300">
+        <div>
+        <h1>Mango Tree</h1>
+        <p><span>price</span> * 1</p>
+      </div>
+      <div id="cart-total" class="mt-4 font-bold text-right">Total: $ <span>0</span></div>
+      </div>
+    </div>
+             
+      <!-- main div end -->
+      </div>
+    
+       </section>
+
+        
 
       <!-- campaign section -->
 
       <section class="py-8 bg-[#F0FDF4]">
         <h1 class="font-bold text-2xl text-center">About the Campaign</h1>
-        <div class="py-8 grid md:grid-cols-2 grid-cols-1 w-[60%] mx-auto gap-5">
+        <div class="py-8 px-4 grid md:grid-cols-2 grid-cols-1 w-6/11 mx-auto gap-5">
           <!-- left col img -->
           <div>
             <img src="./assets/about.png" alt="" />
@@ -382,6 +253,10 @@
       </aside>
     </footer>
 
-    <script src="./index.js"></script>
+
+
+    <script src="./script/index.js"></script>
+
+    <script src="./script/plant.js"></script>
   </body>
 </html>
