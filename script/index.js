@@ -13,8 +13,22 @@ const removeActive = () =>{
 categoryBtn.forEach(btn => btn.classList.remove('active'));
 }
 
+const manageSpinner = (status) =>{
+    if(status == true){
+      document.getElementById('spinner').classList.remove('hidden')
+      document.getElementById('cart-container').classList.add('hidden')
+    }else{
+      document.getElementById('spinner').classList.add('hidden')
+      document.getElementById('cart-container').classList.remove('hidden')
+    }
+    
+}
+
 
 const loadTreesCard = (id) =>{
+
+    manageSpinner(true);
+
     const url = `https://openapi.programming-hero.com/api/category/${id}` 
     console.log(url);
     fetch(url)
@@ -58,8 +72,9 @@ const displayTreesCard = (cards) =>{
           </div>
         `;
         cardContainer.appendChild(treeCard);
-    }) 
-}
+    });
+    manageSpinner(false);
+};
 
 const displayAllCategories = (categories) => {
     const categoryContainer = document.getElementById('categories-container');
@@ -94,6 +109,9 @@ const displayAllCategories = (categories) => {
  const allPlants = document.getElementById('cart-container');
 
 const loadAllPlants = () => {
+    
+    manageSpinner(true); 
+
     fetch('https://openapi.programming-hero.com/api/plants')
         .then((res) => res.json())
         .then((json) => {
@@ -101,41 +119,8 @@ const loadAllPlants = () => {
         removeActive();
           allPlantsBtn.classList.add('active');
            displayAllPlants(json.plants);
-        }); 
-};
-
-const loadPlantsDetails =async (id) =>{
-  const url = `https://openapi.programming-hero.com/api/plant/${id}`
-  // console.log(url);
-  const res = await fetch(url);
-  const details = await res.json();
-  displayPlantsDetails(details.plants);
-}
-
-// "plants": {
-// "id": 30,
-// "image": "https://i.ibb.co.com/0jLycYdv/Water-Hyacinth-min.jpg",
-// "name": "Water Hyacinth",
-// "description": "A floating plant with violet flowers that provide shade to aquatic creatures. Known for rapid growth in ponds.",
-// "category": "Aquatic Plant",
-// "price": 250
-// }
-
-const displayPlantsDetails = (plant) => {
-  console.log(plant);
-  const detailsBox = document.getElementById('details-container')
-  detailsBox.innerHTML = `
-    <div class="space-y-2">
-        <h1 class="font-bold text-xl" >${plant.name}</h1>
-        <img class="h-[200px] w-auto" src="${plant.image}" alt="">
-        <p> <span class="font-bold">Category:</span> ${plant.category}</p>
-        <p> <span class="font-bold">Price:</span> $${plant.price}</p>
-        <p><span class="font-bold">Description:</span> ${plant.description}</p>
-    </div>
-  `;
-  document.getElementById('my_modal_5').showModal();
-}
-
+        });
+      };
 
 const displayAllPlants = (trees) => {
  
@@ -169,8 +154,36 @@ const displayAllPlants = (trees) => {
         `;
         // Append to container 
         allPlants.appendChild(plant);
-        }
-    }
+        };
+        manageSpinner(false); 
+    };
+
+const loadPlantsDetails =async (id) =>{
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`
+  // console.log(url);
+  const res = await fetch(url);
+  const details = await res.json();
+  displayPlantsDetails(details.plants);
+}
+
+
+const displayPlantsDetails = (plant) => {
+  console.log(plant);
+  const detailsBox = document.getElementById('details-container')
+  detailsBox.innerHTML = `
+    <div class="space-y-2">
+        <h1 class="font-bold text-xl" >${plant.name}</h1>
+        <img class="h-[200px] w-auto" src="${plant.image}" alt="">
+        <p> <span class="font-bold">Category:</span> ${plant.category}</p>
+        <p> <span class="font-bold">Price:</span> $${plant.price}</p>
+        <p><span class="font-bold">Description:</span> ${plant.description}</p>
+    </div>
+  `;
+  document.getElementById('my_modal_5').showModal();
+}
+
+
+
 
 
 //  add event listener to the button
