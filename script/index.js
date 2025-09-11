@@ -40,19 +40,19 @@ const displayTreesCard = (cards) =>{
         treeCard.innerHTML = `
         <div class="bg-slate-100 p-2">
             <div class="space-y-2">
-              <img class="md:h-[150px] w-full" src="${card.image}" alt="" />
-              <h1 class="font-bold">${card.name}</h1>
+              <img class="md:h-[150px] w-auto" src="${card.image}" alt="" />
+              <h1 onclick="loadPlantsDetails(${card.id})" class="font-bold">${card.name}</h1>
               <p class="md:text-[10px] md:h-[100px]">
                 ${card.description}
               </p>
             </div>
             <div class="flex justify-between items-center pb-2">
-              <h3 class="font-semibold bg-green-200 text-green-600 text-[10px] rounded-3xl p-2">
+              <h3 onclick="my_modal_5.showModal()"  class="font-semibold bg-green-200 text-green-600 text-[10px] rounded-3xl p-2">
                 ${card.category}
               </h3>
               <p class="font-semibold text-[12px]">$<span>${card.price}</span></p>
             </div>
-            <button class="btn w-full bg-green-600 text-white rounded-3xl ">
+            <button class="add-btn btn w-full bg-green-600 text-white rounded-3xl ">
               Add to Cart
             </button>
           </div>
@@ -93,23 +93,48 @@ const displayAllCategories = (categories) => {
 //  cart container div
  const allPlants = document.getElementById('cart-container');
 
-// const activeRemove = () =>{
-//    const btn = document.getElementById('all-plants-btn')
-// //    console.log(categoryBtn)
-// btn.classList.remove('active');
-// }
-
 const loadAllPlants = () => {
     fetch('https://openapi.programming-hero.com/api/plants')
         .then((res) => res.json())
         .then((json) => {
 
-        removeActive()
-         //  const activeBtn = document.getElementById('all-plants-btn')
+        removeActive();
           allPlantsBtn.classList.add('active');
            displayAllPlants(json.plants);
         }); 
 };
+
+const loadPlantsDetails =async (id) =>{
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`
+  // console.log(url);
+  const res = await fetch(url);
+  const details = await res.json();
+  displayPlantsDetails(details.plants);
+}
+
+// "plants": {
+// "id": 30,
+// "image": "https://i.ibb.co.com/0jLycYdv/Water-Hyacinth-min.jpg",
+// "name": "Water Hyacinth",
+// "description": "A floating plant with violet flowers that provide shade to aquatic creatures. Known for rapid growth in ponds.",
+// "category": "Aquatic Plant",
+// "price": 250
+// }
+
+const displayPlantsDetails = (plant) => {
+  console.log(plant);
+  const detailsBox = document.getElementById('details-container')
+  detailsBox.innerHTML = `
+    <div class="space-y-2">
+        <h1 class="font-bold text-xl" >${plant.name}</h1>
+        <img class="h-[200px] w-auto" src="${plant.image}" alt="">
+        <p> <span class="font-bold">Category:</span> ${plant.category}</p>
+        <p> <span class="font-bold">Price:</span> $${plant.price}</p>
+        <p><span class="font-bold">Description:</span> ${plant.description}</p>
+    </div>
+  `;
+  document.getElementById('my_modal_5').showModal();
+}
 
 
 const displayAllPlants = (trees) => {
@@ -121,14 +146,12 @@ const displayAllPlants = (trees) => {
 
         // create element <li>
         const plant = document.createElement('div');
-        // plant.className = "grid grid-cols-3 gap-4 mt-4";
-        // categoryItem.id = `category-${category.id}`;
 
         plant.innerHTML = `
         <div class="bg-slate-100 p-2">
             <div class="space-y-2">
-              <img class="md:h-[150px] w-full" src="${tree.image}" alt="" />
-              <h1 class="font-bold">${tree.name}</h1>
+              <img class="md:h-[150px] w-auto" src="${tree.image}" alt="" />
+              <h1 onclick="loadPlantsDetails(${tree.id})" class="font-bold">${tree.name}</h1>
               <p class="md:text-[10px] md:h-[100px]">
                 ${tree.description}
               </p>
@@ -139,7 +162,7 @@ const displayAllPlants = (trees) => {
               </h3>
               <p class="">$<span>${tree.price}</span></p>
             </div>
-            <button class="btn w-full bg-green-600 text-white rounded-3xl ">
+            <button class="add-btn btn w-full bg-green-600 text-white rounded-3xl ">
               Add to Cart
             </button>
           </div>
@@ -155,10 +178,9 @@ allPlantsBtn.addEventListener('click', () => {
     loadAllPlants();
 });
 
-// loadAllPlants();
 
-
-
-
+// add cart button function
 
 loadAllCategories();
+
+loadAllPlants();

@@ -111,8 +111,8 @@
         <h1 class="font-bold text-2xl text-center py-10">Chose Your Trees</h1>
       <div class="md:flex w-11/12 mx-auto gap-4"> 
         <!-- category left div -->
-        <div class="md:w-1/5 border-4 border-red-600 p-6 rounded-lg">
-            <h2 class="font-bold text-center mb-4">Categories</h2>
+        <div class="md:w-1/5  p-6 rounded-lg">
+            <h2 class="font-bold text-left mb-4">Categories</h2>
 
             <div id="all-plants-btn" class="p-2 active">All Plants</div>
 
@@ -129,28 +129,21 @@
           
 
             <!-- right cart div -->
-             <div id="cart-container" class="md:w-1/5 col-span-3 border-2 border-orange-600 p-4 rounded-lg space-y-2 ">
-      <div class="flex justify-between p-4">
+      <div id="add-plant" class="md:w-1/5 col-span-3 p-2 rounded-lg bg-white">
+      <div class="flex justify-between items-center p-2">
         <h1 class="font-bold mb-4 text-center">My Cart</h1>
-        <button class=" bg-green-600 text-white text-sm font-bold px-2 py-0">Remove</button>
-      </div>
-      <div class="p-2 bg-gray-300 rounded-md">
-        <div>
-        <h1 class="font-bold text-sm">Mango Tree</h1>
-        <p>$ <span>price</span> * 1</p>
-      </div>
-      <div id="cart-total" class="font-bold text-right text-sm">Total: $ <span>0</span></div>
-      </div>
+      </div> 
+       
+      
+      <div class="p-2 bg-gray-300 rounded-md flex justify-between items-center">
+          <div class="">
+            <h1 class="font-bold text-sm">Mango Tree</h1>
+            <p>$ <span>price</span> * 1</p>
+          </div>
+          <div><i class="fa-solid fa-xmark clear"></i></div>
 
-      <div class="p-2 bg-gray-300">
-        <div>
-        <h1>Mango Tree</h1>
-        <p><span>price</span> * 1</p>
       </div>
-      <div id="cart-total" class="mt-4 font-bold text-right">Total: $ <span>0</span></div>
-      </div>
-    </div>
-             
+        <div id="cart-total" class="font-bold text-right text-sm">Total: $ <span>0</span></div>     
       <!-- main div end -->
       </div>
     
@@ -254,6 +247,32 @@
         <p class="font-semibold">© 2025 Green Earth. All Rights Reserved.</p>
       </aside>
     </footer>
+
+    <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div id="details-container" class="space-y-2">
+      <div>
+        <h1 class="font-bold text-xl" >Plants name</h1>
+      <img src="" alt="">
+      <p> <span class="font-bold">Category:</span> Fruit</p>
+      <p> <span class="font-bold">Price: </span> $200</p>
+      <p><span class="font-bold">description:</span> hello jenny I love you so much.</p>
+      </div>
+
+    </div>
+    <!-- <h3 class="text-lg font-bold">Hello!</h3>
+    <p class="py-4">Press ESC key or click the button below to close</p> -->
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 
 
 
