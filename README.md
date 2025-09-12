@@ -1,5 +1,4 @@
 
-
 1. **Var, Let, Const**
    - **Var:** Function-scoped, can be changed and redeclared, old-style.
    - **Let:** Block-scoped, can be changed but cannot be redeclared in the same block.
