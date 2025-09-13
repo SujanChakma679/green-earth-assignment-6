@@ -52,7 +52,7 @@ const displayTreesCard = (cards) =>{
         console.log(card);
         const treeCard = document.createElement('div');
         treeCard.innerHTML = `
-        <div class="bg-slate-100 p-2">
+            <div class="bg-white rounded-lg p-2">
             <div class="space-y-2">
               <img class="md:h-[150px] w-auto" src="${card.image}" alt="" />
               <h1 onclick="loadPlantsDetails(${card.id})" class="font-bold">${card.name}</h1>
@@ -69,7 +69,8 @@ const displayTreesCard = (cards) =>{
             <button class="add-btn btn w-full bg-green-600 text-white rounded-3xl ">
               Add to Cart
             </button>
-          </div>
+            </div>
+          
         `;
         cardContainer.appendChild(treeCard);
     });
@@ -133,8 +134,9 @@ const displayAllPlants = (trees) => {
         const plant = document.createElement('div');
 
         plant.innerHTML = `
-        <div class="bg-slate-100 p-2">
-            <div class="space-y-2">
+        
+            <div class="p-2 mb-4 bg-white rounded-lg space-y-2">
+                  <div class="space-y-2">
               <img class="md:h-[150px] w-auto" src="${tree.image}" alt="" />
               <h1 onclick="loadPlantsDetails(${tree.id})" class="font-bold">${tree.name}</h1>
               <p class="md:text-[10px] md:h-[100px]">
@@ -150,7 +152,9 @@ const displayAllPlants = (trees) => {
             <button class="add-btn btn w-full bg-green-600 text-white rounded-3xl ">
               Add to Cart
             </button>
-          </div>
+            
+            </div>
+          
         `;
         // Append to container 
         allPlants.appendChild(plant);
@@ -192,7 +196,9 @@ allPlantsBtn.addEventListener('click', () => {
 });
 
 
-// add cart button function
+// // add cart button function
+
+
 
 loadAllCategories();
 

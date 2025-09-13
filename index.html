@@ -118,42 +118,49 @@
           
       <div class="md:flex w-11/12 mx-auto gap-4"> 
         <!-- category left div -->
-        <div class="md:w-1/5  p-6 rounded-lg">
+        <div class="md:w-1/5 rounded-lg mt-3">
             <h2 class="font-bold text-left mb-4">Categories</h2>
 
-            <div id="all-plants-btn" class="p-2 active">All Plants</div>
+            <div id="all-plants-btn" class="p-2 active text-center">All Plants</div>
 
-            <ul id="categories-container"  class="text-sm">
+            <ul id="categories-container"  class="text-sm text-center">
               
             </ul>
         </div>
 
         <!-- trees card container -->
 
-          <div id="cart-container" class="md:w-3/5 grid grid-cols-1 sm:grid-cols-3 gap-4 rounded-lg sm:py-4">
+          <div id="cart-container" class="md:w-3/5 grid grid-cols-1 md:grid-cols-3 md:gap-x-4 sm:py-4 h-full rounded-lg">
 
           </div>
+          
 
           
 
             <!-- right cart div -->
-      <div id="add-plant" class="md:w-1/5 col-span-3 rounded-lg bg-white p-2">
+      <div id="" class="md:w-1/5 col-span-3 rounded-lg bg-white p-2 mt-3">
       <div class="flex justify-between items-center p-2">
         <h1 class="font-bold text-center">My Cart</h1>
       </div> 
        
       
-      <div class="p-2 bg-gray-300 rounded-md flex justify-between items-center">
-          <div class="">
+      <div>
+            <div id="cart-items" >
+          <!-- <div class="">
             <h1 class="font-bold text-sm">Mango Tree</h1>
             <p>$ <span>price</span> * 1</p>
           </div>
-          <div><i class="fa-solid fa-xmark clear"></i></div>
+          <div><i class="fa-solid fa-xmark clear"></i></div> -->
 
       </div>
-        <div id="cart-total" class="font-bold text-right text-sm">Total: $ <span>0</span></div>     
-      <!-- main div end -->
+        <div 
+        id="cart-total" class="font-bold text-right text-sm">Total: $ <span>0</span>
+      </div> 
+
+      </div>    
+      
       </div>
+      <!-- main div end -->
     
        </section>
 
@@ -286,6 +293,6 @@
 
     <script src="./script/index.js"></script>
 
-    <script src="./script/plant.js"></script>
+    <script src="./script/cart.js"></script>
   </body>
 </html>
